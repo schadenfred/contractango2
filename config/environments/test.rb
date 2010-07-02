@@ -5,7 +5,7 @@ Contractango::Application.configure do
   # test suite.  You never need to work with it otherwise.  Remember that
   # your test database is "scratch space" for the test suite and is wiped
   # and recreated between test runs.  Don't rely on the data there!
-  config.cache_classes = true
+  config.cache_classes = false
 
   # Log error messages when you accidentally call methods on nil.
   config.whiny_nils = true
@@ -30,3 +30,4 @@ Contractango::Application.configure do
   # like if you have constraints or database-specific column types
   # config.active_record.schema_format = :sql
 end
+
