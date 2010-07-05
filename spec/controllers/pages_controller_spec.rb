@@ -3,6 +3,10 @@ require 'spec_helper'
 describe PagesController do
   render_views
 
+  before(:each) do
+    @base_title = "Contractango"
+  end
+
   describe "GET 'home'" do
     it "should be successful" do
       get 'home'
@@ -12,7 +16,7 @@ describe PagesController do
     it "should have the right title" do
       get 'home'
       response.should have_selector("title",
-                        :content => "Contractango | Home")
+                        :content => @base_title + " | Home")
     end
   end
 
@@ -25,8 +29,7 @@ describe PagesController do
     it "should have the right title" do
       get 'contact'
       response.should have_selector("title",
-                        :content =>
-                          "Contractango | Contact")
+                        :content => @base_title + " | Contact")
     end
   end
 
@@ -39,8 +42,7 @@ describe PagesController do
     it "should have the right title" do
       get 'about'
       response.should have_selector("title",
-                        :content =>
-                          "Contractango | About")
+                        :content => @base_title + " | About")
     end
   end
 
@@ -53,7 +55,7 @@ describe PagesController do
     it "should have the right title" do
       get 'terms'
       response.should have_selector("title",
-                        :content => "Contractango | Terms of Use")
+                        :content => @base_title + " | Terms of Use")
     end
   end
 
@@ -66,7 +68,7 @@ describe PagesController do
     it "should have the right title" do
       get 'privacy'
       response.should have_selector("title",
-                        :content => "Contractango | Privacy")
+                        :content => @base_title + " | Privacy")
     end
   end
 
@@ -79,7 +81,7 @@ describe PagesController do
     it "should have the right title" do
       get 'help'
       response.should have_selector("title",
-                        :content => "Contractango | Help")
+                        :content => @base_title + " | Help")
     end
   end
 
