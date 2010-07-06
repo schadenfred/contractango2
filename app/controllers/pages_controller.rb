@@ -16,7 +16,7 @@ class PagesController < ApplicationController
   end
 
   def privacy
-    @title = "Privacy"
+    @title = "Privacy Policy"
   end
 
   def help
