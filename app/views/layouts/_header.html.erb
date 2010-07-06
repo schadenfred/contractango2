@@ -1,0 +1,9 @@
+<div id="header">
+  <% logo = image_tag("logo.png", :alt => "Contractango", :class => "round shadow") %>
+    <%= link_to logo, root_path %>
+  <ul class="navigation round shadow">
+    <li><%= link_to_unless_current "Home", root_path %></li> |
+    <li><%= link_to_unless_current "Sign in", '#' %></li>
+  </ul>
+</div>
+
