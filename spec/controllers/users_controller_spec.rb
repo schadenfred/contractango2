@@ -43,5 +43,29 @@ describe UsersController do
       response.should have_selector("title", :content => "Sign up")
     end
   end
+
+describe "POST 'create'" do
+
+    describe "failure" do
+
+      before(:each) do
+        @attr = { :name => "", :email => "", :password => "",
+                  :password_confirmation => "" }
+        @user = Factory.build(:user, @attr)
+        User.stub!(:new).and_return(@user)
+        @user.should_receive(:save).and_return(false)
+      end
+
+      it "should have the right title" do
+        post :create, :user => @attr
+        response.should have_selector("title", :content => "Sign up")
+      end
+
+      it "should render the 'new' page" do
+        post :create, :user => @attr
+        response.should render_template('new')
+      end
+    end
+  end
 end
 
