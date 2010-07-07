@@ -1,5 +1,5 @@
 Contractango::Application.routes.draw do |map|
-  get "users/new"
+  resources :users
 
   match '/signup',  :to => 'users#new'
 
