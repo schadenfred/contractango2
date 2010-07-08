@@ -30,6 +30,8 @@ class User < ActiveRecord::Base
 
    before_save :encrypt_password
 
+   default_scope :order => 'users.created_at'
+
   def has_password?(submitted_password)
     encrypted_password == encrypt(submitted_password)
   end
